@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+:root{
+    --font-size-high: 2rem;
+    --font-size: 1.5rem;
+    --color-primary: #D980FA;
+    --color-secundary:  #FDA7DF;
+    --color-tense: #fabc02;
+}
+header{
+    height: 10vh;
+    background: var(--color-primary);
+    margin: auto;
+    width: 100%;
+}
+header .content-header{
+    margin: auto;
+    color: var(--color-tense);
+    width: 90%;
+    display: flex;
+    padding-top: 1rem;
+    justify-content: space-between;
+}
+header .content-header i, a{
+    font-size: var(--font-size-high);
+    margin-top:5px;
+    text-decoration: none;
+}
+main{
+    width: 100%;
+    background: var(--color-tense);
+}
+.content-name{
+    align-items: center;
+    height: 90vh;
+    justify-items: center;
+    margin: auto;
+    border-radius: .5rem;
+    display: flex;
+    width: 70%;
+}
+.content-name .contet-text-name{
+    color: var(--color-primary);
+    font-size: var(--font-size);
+    width: 80%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 2rem;
+}
+#namePlayer{
+    font-size: var(--font-size);
+    background: transparent;
+    border: 2px solid var(--color-secundary);
+    color: var(--color-primary);
+    outline: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 50%;
+}
+.content-name img{
+    width: 45%;
+}
+#buttonNamePlayer{
+    outline: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: var(--font-size);
+    border: 2px solid var(--color-secundary);
+    background: var(--color-secundary);
+    border-radius: 5px;
+    width: 50%;
+}
+#buttonNamePlayer:hover{
+    background: var(--color-primary);
+    transition: ease-in .3s;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .content-name {
+        width: 100%;
+    }
+    .content-name .contet-text-name{
+        width: 80%;
+    }
+  } 
+
+@media screen and (max-width: 800px) {
+    .content-name img {
+      display: none;
+    }
+    .content-name .contet-text-name {
+        width: 80%;
+    }
+  } 
