@@ -6,8 +6,9 @@ function storeNick(){
     var name = newNamePlayer.value;
     namePlayer = name;
     alert("Seja bem vindo " + namePlayer + "!")
+    window.location.replace("/assets/choseQuiz/choseQuiz.html");
+    console.log(namePlayer)
 }
-console.log(namePlayer)
 
 
 
