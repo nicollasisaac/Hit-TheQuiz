@@ -1,0 +1,73 @@
+@import url(/assets/css/colors.css);
+:root{
+    --font-size-high: 2rem;
+    --font-size: 1.5rem;
+    --color-primary: #D980FA;
+    --color-secundary:  #FDA7DF;
+    --color-tense: #fabc02;
+    --color-black:rgba(0, 0, 0, 0.327);
+}
+#quiz{
+    background: var(--color-tense);
+    height: 90vh;
+}
+.headerQuiz{
+    background: var(--color-tense);
+}
+.content-text{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+.content-text h2{
+    font-size: var(--font-size);
+    color: var(--color-black);
+    padding-top: 1rem;
+}
+.headerQuiz h1{
+    color: var(--color-primary);
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    font-size: var(--font-size-high);
+}
+.greenQuiz{
+    margin: auto;
+    color: var(--color-black);
+    font-size: 20px;
+    padding-top: 1rem;
+    width: 90%;
+}
+.choseAlternative{
+    color: var(--color-primary);
+    list-style: none;
+    margin: auto;
+    width: 90%;
+    height: 60vh;
+}
+.choseAlternative li{
+    margin: auto;
+    background: var(--color-black);
+    font-size: var(--font-size);
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 1.5rem;
+}
+.choseAlternative li:hover{
+    background: var(--color-primary);
+    color: var(--color-black);
+    transition: ease .2s;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    #quiz{
+        background: var(--color-tense);
+        height: 100%;
+    }
+    .headerQuiz{
+        padding-bottom: 2rem;
+        height: 100%;
+    }
+}
