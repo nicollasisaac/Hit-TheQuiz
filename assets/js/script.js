@@ -3,12 +3,15 @@ let namePlayer = ""
 
 function storeNick(){
     var newNamePlayer = document.querySelector("#namePlayer");
-    var name = newNamePlayer.value;
-    namePlayer = name;
+    namePlayer = newNamePlayer.value;
+    
     alert("Seja bem vindo " + namePlayer + "!")
+
+    localStorage.setItem('name', namePlayer)
+
     window.location.replace("/assets/choseQuiz/choseQuiz.html");
-    console.log(namePlayer)
 }
+
 
 
 
