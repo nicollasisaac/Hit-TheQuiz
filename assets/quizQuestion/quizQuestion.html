@@ -21,20 +21,25 @@
     <section id="quiz">
         <div class="headerQuiz">
             <div class="content-text">
-                <h2 class="greenQuiz"><span style="color: rgb(255, 52, 52)";></span>: 0 acertos</h2>
-                <h2>Perguntas:0/10</h2>
+                <div class="ponts">
+                    <span style="color: rgb(255, 52, 52)";></span><h2 name="countGreen" class="greenQuiz">: 0 acertos</h2>
+                </div>
+                <h2 name="askedQuestions">Perguntas:0/10</h2>
             </div>
             <h1 name="title"></h1>
             <div class="choseAlternative">
-                <li name="alter1" onclick="">A - </li>
-                <li name="alter2" onclick="">B - </li>
-                <li name="alter3" onclick="">C - </li>
-                <li name="alter4" onclick="">D - </li>
+                <li class="alternative" name="alter1" onclick="correctionTest(1)">A - </li>
+                <li class="alternative" name="alter2" onclick="correctionTest(2)">B - </li>
+                <li class="alternative" name="alter3" onclick="correctionTest(3)">C - </li>
+                <li class="alternative" name="alter4" onclick="correctionTest(4)">D - </li>
             </div>
         </div>
     </section>
 
     <script src="/assets/QuizApi/literaturaBrasileira.js"></script>
+    <script src="/assets/QuizApi/solarSystem.js"></script>
+    <script src="/assets/QuizApi/programming.js"></script>
+    <script src="/assets/QuizApi/globalization.js"></script>
     <script src="/assets/quizQuestion/quizQuestion.js"></script>
 </body>
 </html>

@@ -1,35 +1,69 @@
-var numberTypeQuiz = localStorage.getItem('typeQuiz');
+//Trazer NickName
 var nickname = localStorage.getItem('name')
-
 var h2 = document.querySelector('span');
 var textH2 = document.createTextNode(nickname);
 h2.appendChild(textH2)  
 
+
+//adicionar variáveis sobre o quiz, e trazer o quiz escolhido
+let numberQuizFun = 0
+let questionsAsked = 0;
+var numberTypeQuiz = localStorage.getItem('typeQuiz');
+
 if(numberTypeQuiz == 1){
-    quizNumber1();
+    numberQuizFun = 1
+    quizNumber(numberQuizFun);
 } else if(numberTypeQuiz == 2){
-    quizNumber2();
+    numberQuizFun = 2
+    quizNumber(numberQuizFun);
 } else if(numberTypeQuiz == 3){
-    quizNumber3();
+    numberQuizFun = 3
+    quizNumber(numberQuizFun);
 } else if(numberTypeQuiz == 4){
-    quizNumber4();
+    numberQuizFun = 4
+    quizNumber(numberQuizFun);
 }
 
-
-function quizNumber1(){
+//Função que traz as infomações do quiz
+function quizNumber(numberQuizFun){
     let dadoTitle = []
     let alternative1 = []
     let alternative2 = []
     let alternative3 = []
     let alternative4 = []
-    
-    
-    for(let elemento of quiz1){
-        dadoTitle.push(elemento.title);
-        alternative1.push(elemento.alternative1)
-        alternative2.push(elemento.alternative2)
-        alternative3.push(elemento.alternative3)
-        alternative4.push(elemento.alternative4)
+
+    if(numberQuizFun == 1){
+        for(let elemento of quiz1){
+            dadoTitle.push(elemento.title);
+            alternative1.push(elemento.alternative1)
+            alternative2.push(elemento.alternative2)
+            alternative3.push(elemento.alternative3)
+            alternative4.push(elemento.alternative4)
+        }
+    }else if( numberQuizFun == 2){
+        for(let elemento of quiz2){
+            dadoTitle.push(elemento.title);
+            alternative1.push(elemento.alternative1)
+            alternative2.push(elemento.alternative2)
+            alternative3.push(elemento.alternative3)
+            alternative4.push(elemento.alternative4)
+        }
+    } else if(numberQuizFun == 3){
+        for(let elemento of quiz3){
+            dadoTitle.push(elemento.title);
+            alternative1.push(elemento.alternative1)
+            alternative2.push(elemento.alternative2)
+            alternative3.push(elemento.alternative3)
+            alternative4.push(elemento.alternative4)
+        }
+    } else {
+        for(let elemento of quiz4){
+            dadoTitle.push(elemento.title);
+            alternative1.push(elemento.alternative1)
+            alternative2.push(elemento.alternative2)
+            alternative3.push(elemento.alternative3)
+            alternative4.push(elemento.alternative4)
+        }
     }
     
     var documentTitle = document.querySelector("h1[name='title']");
@@ -39,15 +73,81 @@ function quizNumber1(){
     var documenteAlternative4 = document.querySelector("li[name='alter4']")
     
     
-    var textTitle1 = document.createTextNode(dadoTitle[1]);
-    var textAlternative1 = document.createTextNode(alternative1[1]);
-    var textAlternative2 = document.createTextNode(alternative2[1]);
-    var textAlternative3 = document.createTextNode(alternative3[1]);
-    var textAlternative4 = document.createTextNode(alternative4[1]);
+    var textTitle1 = (dadoTitle[questionsAsked]);
+    var textAlternative1 = (alternative1[questionsAsked]);
+    var textAlternative2 = (alternative2[questionsAsked]);
+    var textAlternative3 = (alternative3[questionsAsked]);
+    var textAlternative4 = (alternative4[questionsAsked]);
     
-    documentTitle.appendChild(textTitle1)
-    documenteAlternative1.appendChild(textAlternative1)
-    documenteAlternative2.appendChild(textAlternative2)
-    documenteAlternative3.appendChild(textAlternative3)
-    documenteAlternative4.appendChild(textAlternative4)
+    documentTitle.innerHTML = textTitle1
+    documenteAlternative1.innerHTML = textAlternative1
+    documenteAlternative2.innerHTML = textAlternative2
+    documenteAlternative3.innerHTML = textAlternative3
+    documenteAlternative4.innerHTML = textAlternative4
+}
+
+//delay para o bom funcionamento do código
+function delay(n){
+    return new Promise(function(resolve){
+        setTimeout(resolve,n*1000);
+    });
+}
+
+//Função que faz a correção
+async function correctionTest(numberQuestionChecked){
+    if(questionsAsked == 9){
+        alert("Acabou")
+    }
+    var questionCorrect = [];
+
+    if(numberQuizFun == 1){
+        for(let elemento of quiz1){
+            questionCorrect.push(elemento.correct)
+        }
+    }else if( numberQuizFun == 2){
+        for(let elemento of quiz2){
+            questionCorrect.push(elemento.correct)
+        }
+    }else if(numberQuizFun == 3){
+        for(let elemento of quiz3){
+            questionCorrect.push(elemento.correct)
+        }
+    } else {
+        for(let elemento of quiz4){
+            questionCorrect.push(elemento.correct)
+        }
+    }
+
+    if(numberQuestionChecked == questionCorrect[questionsAsked]){
+        var cor = "var(--color-green)"
+        document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = cor;
+        countCorretQuestion();
+
+        await delay(1);
+        var color = "var(--color-white-parse)"
+        document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = color;
+    } else {
+        var cor = "var(--color-red)"
+        document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = cor;
+
+        await delay(1);
+        var color = "var(--color-white-parse)"
+        document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = color;
+    }
+
+    questionsAsked +=1;
+    var textQuestionAsked = "Perguntas:"+ questionsAsked+ "/10";
+    document.querySelector("h2[name='askedQuestions']").innerHTML = textQuestionAsked
+
+    quizNumber(numberQuizFun);
+}
+
+//Função que altera o contador de acertos
+let countCorrect = 0
+
+function countCorretQuestion(){
+    countCorrect += 1;
+    var greenDocument = document.querySelector("h2[name='countGreen']")
+    var countText = (": "+ countCorrect+ " acertos")
+    greenDocument.innerHTML = countText
 }

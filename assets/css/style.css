@@ -30,13 +30,18 @@ header .content-header i, a{
 main{
     width: 100%;
     background: var(--color-tense);
+    height: 90vh;
+    display: flex;
 }
 .content-name{
+    padding: .5rem;
     align-items: center;
-    height: 90vh;
     justify-items: center;
     margin: auto;
     border-radius: .5rem;
+    box-shadow: 10px 10px 10px;
+    -webkit-box-shadow: 10px 10px 10px  var(--color-black);
+    -moz-box-shadow: 10px 10px 10px var(--color-black);
     display: flex;
     width: 70%;
 }
@@ -79,11 +84,11 @@ main{
 
 
 @media screen and (max-width: 1200px) {
-    .content-name {
-        width: 100%;
-    }
     .content-name .contet-text-name{
         width: 80%;
+    }
+    .content-name{
+        width: 85%;
     }
   } 
 

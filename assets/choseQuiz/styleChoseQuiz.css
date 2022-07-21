@@ -1,4 +1,8 @@
 @import url(/assets/css/colors.css);
+.choseQuiz{
+    padding-bottom: 1rem;
+    background: var(--color-tense);
+}
 .choseQuiz h2{
     margin: auto;
     font-size: var(--font-size-high);
@@ -11,6 +15,7 @@ section{
     background: var(--color-tense);
     width: 100%;
     height: 90vh;
+    justify-content: center;
 }
 .choseQuizGroup{
     display: flex;
@@ -21,19 +26,22 @@ section{
     border-radius: .5rem;
     display: flex;
     margin: auto;
-    background: var(--color-primary);
     margin: 1rem;
     padding: 1rem;
     height: 30vh;
     width: 40%;
     flex-direction: row-reverse;
+    box-shadow: 5px 5px 5px;
+    -webkit-box-shadow: 5px 5px 5px  var(--color-black);
+    -moz-box-shadow: 5px 5px 5px var(--color-black);
+    transition: ease-in .4s;
 }
 .optionQuiz:hover{
     background: var(--color-secundary);
-    transition: ease .3s;
+    transition: ease-in .4s;
 }
 .optionQuiz h2{
-    color: var(--color-tense);
+    color: var(--color-primary);
     width: 100%;
     padding-bottom: 1.5rem;
     padding-top: 1rem;
