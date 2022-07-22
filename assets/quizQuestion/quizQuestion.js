@@ -96,7 +96,8 @@ function delay(n){
 //Função que faz a correção
 async function correctionTest(numberQuestionChecked){
     if(questionsAsked == 9){
-        alert("Acabou")
+        localStorage.setItem('correctCountNumber', countCorrect)
+        window.location.replace("/assets/finalQuiz/finalQuiz.html");
     }
     var questionCorrect = [];
 
@@ -144,6 +145,9 @@ async function correctionTest(numberQuestionChecked){
 
 //Função que altera o contador de acertos
 let countCorrect = 0
+
+//Fazer contador de acertos, localStorage
+localStorage.setItem('correctCountNumber', )
 
 function countCorretQuestion(){
     countCorrect += 1;
