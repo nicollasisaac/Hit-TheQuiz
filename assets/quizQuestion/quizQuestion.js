@@ -126,16 +126,20 @@ async function correctionTest(numberQuestionChecked){
         document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = cor;
         countCorretQuestion();
 
-        await delay(.3);
+        await delay(.4);
         var color = "var(--color-white-parse)"
         document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = color;
     } else {
-        var cor = "var(--color-red)"
-        document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = cor;
+        var cor = "var(--color-green)"
+        document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = cor;
 
-        await delay(.3);
+        var corRed = "var(--color-red)"
+        document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = corRed;
+
+        await delay(.4);
         var color = "var(--color-white-parse)"
         document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = color;
+        document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background  = color;
     }
     
     questionsAsked +=1;
