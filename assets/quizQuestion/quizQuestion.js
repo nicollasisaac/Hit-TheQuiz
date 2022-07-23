@@ -95,6 +95,7 @@ function delay(n){
 
 //Função que faz a correção
 async function correctionTest(numberQuestionChecked){
+
     if(questionsAsked == 9){
         localStorage.setItem('correctCountNumber', countCorrect)
         window.location.replace("/assets/finalQuiz/finalQuiz.html");
@@ -119,27 +120,27 @@ async function correctionTest(numberQuestionChecked){
         }
     }
 
+
     if(numberQuestionChecked == questionCorrect[questionsAsked]){
         var cor = "var(--color-green)"
         document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = cor;
         countCorretQuestion();
 
-        await delay(1);
+        await delay(.3);
         var color = "var(--color-white-parse)"
         document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = color;
     } else {
         var cor = "var(--color-red)"
         document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = cor;
 
-        await delay(1);
+        await delay(.3);
         var color = "var(--color-white-parse)"
         document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = color;
     }
-
+    
     questionsAsked +=1;
     var textQuestionAsked = "Perguntas:"+ questionsAsked+ "/10";
     document.querySelector("h2[name='askedQuestions']").innerHTML = textQuestionAsked
-
     quizNumber(numberQuizFun);
 }
 

@@ -54,7 +54,6 @@
 }
 .choseAlternative li:hover{
     background: var(--color-primary);
-    color: var(--color-secundary);
     transition: ease .2s;
     cursor: pointer;    
 }

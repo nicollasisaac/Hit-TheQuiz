@@ -26,6 +26,7 @@ header .content-header i, a{
     font-size: var(--font-size-high);
     margin-top:5px;
     text-decoration: none;
+    color: var(--color-tense);
 }
 main{
     width: 100%;
