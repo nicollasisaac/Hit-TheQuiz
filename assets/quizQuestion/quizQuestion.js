@@ -143,7 +143,7 @@ async function correctionTest(numberQuestionChecked){
     }
     
     questionsAsked +=1;
-    var textQuestionAsked = "Perguntas:"+ questionsAsked+ "/10";
+    var textQuestionAsked = "Perguntas: "+ questionsAsked+ "/10";
     document.querySelector("h2[name='askedQuestions']").innerHTML = textQuestionAsked
     quizNumber(numberQuizFun);
 }
