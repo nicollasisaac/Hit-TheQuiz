@@ -1,16 +1,6 @@
-:root{
-    --font-size-high: 2rem;
-    --font-size: 1.5rem;
-    --color-primary: #D980FA;
-    --color-secundary:  #FDA7DF;
-    --color-tense: #fabc02;
-    --color-black:rgba(0, 0, 0, 0.327);
-    --color-white-parse:rgba(255, 247, 247, 0.892);
-    --color-green:rgb(36, 247, 57);
-    --color-red:rgb(255, 52, 52);
-}
+
 #finalQuiz{
-    background: var(--color-tense);
+    background: var(--color-secundary);
 }
 .content-result{
     height: 90vh;
