@@ -132,10 +132,10 @@ async function correctionTest(numberQuestionChecked){
     } else {
         var cor = "var(--color-green)"
         document.querySelector("li[name='alter"+ (questionCorrect[questionsAsked]) + "']").style.background = cor;
-
+        
         var corRed = "var(--color-red)"
         document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = corRed;
-
+        
         await delay(.4);
         var color = "var(--color-white-parse)"
         document.querySelector("li[name='alter"+ numberQuestionChecked + "']").style.background = color;
