@@ -24,9 +24,11 @@ header .content-header{
 }
 header .content-header i, a{
     font-size: var(--font-size-high);
-    margin-top:5px;
     text-decoration: none;
     color: var(--color-tense);
+}
+header .content-header h1{
+    font-size: var(--font-size-high);
 }
 main{
     width: 100%;
