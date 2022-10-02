@@ -15,104 +15,67 @@ section{
     background: var(--color-tense);
     width: 100%;
     height: 90vh;
-    justify-content: center;
 }
+
 .choseQuizGroup{
-    display: flex;
+    width: 80%;
     margin: auto;
-    justify-content: center;
+    display: flex;
+    margin-top: 1rem;
 }
 .optionQuiz{
     border-radius: .5rem;
     display: flex;
-    margin: auto;
-    margin: 1rem;
     padding: 1rem;
     height: 30vh;
     width: 40%;
-    flex-direction: row-reverse;
-    box-shadow: 5px 5px 5px;
-    -webkit-box-shadow: 5px 5px 5px  var(--color-black);
-    -moz-box-shadow: 5px 5px 5px var(--color-black);
+    margin: auto;
+    box-shadow: 3px 3px 3px;
+    -webkit-box-shadow: 3px 3px 3px  var(--color-black);
+    -moz-box-shadow: 3px 3px 3px var(--color-black);
     transition: ease-in .4s;
+    position: relative;
 }
 .optionQuiz:hover{
     background: var(--color-secundary);
-    transition: ease-in .4s;
+    transition: ease-in .2s;
+}
+.content-text-quiz{
+    width: 50%;
+    position:absolute;
+    top: 50%;                         /* 3 */
+    transform: translate(0, -50%) 
+}
+.optionQuiz img{
+    width: 50%;
+    margin-left: 55%;
 }
 .optionQuiz h2{
     color: var(--color-primary);
     width: 100%;
-    padding-bottom: 1.5rem;
-    padding-top: 1rem;
 }
-.optionQuiz img{
-    height: 85%;
-    width: 40%;
-}
-.content-text-quiz{
-    padding-top: 5%;
-    width: 70%;
-    height: 30%;
-}
-input{
+.input{
     outline: none;
     font-size: var(--font-size);
     border: 2px solid var(--color-secundary);
-    justify-content: flex-start;
-    width: 45%;
-    margin-top: 1rem;
-    padding: 1rem;
+    padding: .5rem;
     background: var(--color-tense);
     border-radius: .5rem;
+    text-align: center;
 }
-input:hover{
+.input:hover{
     background: var(--color-primary);
     cursor: pointer;
     transition: ease .2s;
 }
 
-@media screen and (max-width: 1200px) {
-    section{
-        background: var(--color-tense);
-        width: 100%;
-        height: 100%;
-    }
+@media screen and (max-width: 1100px) {
     .choseQuizGroup{
-        display: inline-grid;
-        margin: auto;
+        width: 80%;
+        display: inline;
+        margin-top: 1rem;
     }
     .optionQuiz{
-        margin: auto;
-        width: 90%;
-        height: 27vh;
-        border-radius: .5rem;
-        display: flex;
-        margin: .5rem;
-        padding: .5rem;
+        width: 85%;
     }
-    .optionQuiz img{
-        height: 85%;
-        width: 35%;
-    }
-    .content-text-quiz{
-        padding-top: 8%;
-        width: 100%;
-        height: 100%;
-    }
-    input {
-        outline: none;
-        font-size: var(--font-size);
-        border: 2px solid var(--color-secundary);
-        padding: .5rem;
-        width: 60%;
-        background: var(--color-tense);
-        margin: auto;
-        border-radius: 0.5rem;
-        margin-top: 3rem;
-    }
-    .optionQuiz h2{
-        padding-bottom: 0rem;
-        padding-top: 0rem;
-    }
-} 
+}
